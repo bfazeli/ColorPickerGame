@@ -18,6 +18,7 @@ easyBtn.addEventListener("click", function () {
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
 
+    messageDisplay.textContent = "";
     colors = generateRandomColors(3);
     pickedColor = pickColor();
 
@@ -34,6 +35,7 @@ hardBtn.addEventListener("click", function () {
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
 
+    messageDisplay.textContent = "";
     colors = generateRandomColors(6);
     pickedColor = pickColor();
 
@@ -48,6 +50,7 @@ hardBtn.addEventListener("click", function () {
 
 resetButton.addEventListener("click", function () {
     resetButton.textContent = "New Colors";
+    messageDisplay.textContent = "";
 
    // Generate all new colors
     colors = hardBtn.classList.contains("selected") ? generateRandomColors(6) : generateRandomColors(3);
@@ -56,6 +59,7 @@ resetButton.addEventListener("click", function () {
 
     // Change colorDisplay to match picked color
     colorDisplay.textContent = pickedColor;
+    this.textContent = "New Colors";
 
     // Change colors of squares
     for(var i = 0; i < squares.length; ++i)
